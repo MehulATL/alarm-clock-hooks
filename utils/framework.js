@@ -1,4 +1,4 @@
-const JobTarget = (function () {
+const FakeReact = (function () {
   let hooks = []
   let hookIndex = 0
 
@@ -47,4 +47,4 @@ const JobTarget = (function () {
   return { useState, useEffect, render, renderLoop }
 })()
 
-export { JobTarget }
+export { FakeReact }

@@ -1,11 +1,11 @@
-import { JobTarget } from './utils/framework'
+import { FakeReact } from './utils/framework'
 import './style.css'
 
 const clock = () => {
-  const [time, setTime] = JobTarget.useState(new Date().toLocaleTimeString('en-us', { hour12: false }))
-  const [alarm, setAlarm] = JobTarget.useState(null);
+  const [time, setTime] = FakeReact.useState(new Date().toLocaleTimeString('en-us', { hour12: false }))
+  const [alarm, setAlarm] = FakeReact.useState(null);
 
-  JobTarget.useEffect(() => {
+  FakeReact.useEffect(() => {
     if (time === alarm) {
       alert('beep!')
     }
@@ -37,4 +37,4 @@ const clock = () => {
   return { render }
 }
 
-JobTarget.renderLoop(clock)
+FakeReact.renderLoop(clock)
